@@ -101,6 +101,9 @@ const App = () => {
           className={`${styles.pedal} ${styles.brakePedal}`}
           onMouseDown={handleBrake}
           onMouseUp={handleRelease}
+          onTouchStart={handleBrake}
+          onTouchEnd={handleRelease}
+          onMouseLeave={handleRelease}
         >
           -
         </button>
@@ -108,6 +111,9 @@ const App = () => {
           className={`${styles.pedal} ${styles.acceleratorPedal}`}
           onMouseDown={handleAccelerate}
           onMouseUp={handleRelease}
+          onTouchStart={handleAccelerate}
+          onTouchEnd={handleRelease}
+          onMouseLeave={handleRelease}
         >
           +
         </button>
