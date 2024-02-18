@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #101010;
+}
+.speedometer {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #101010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0px 20px #e61919;
+  position: relative;
+}
+.speedText {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: #101010;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 150px;
+  box-shadow: 0 0px 10px #101010;
+  z-index: 1;
+}
+.needle {
+  width: 2px;
+  height: 150px;
+  background: #e61919;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transition: transform 0.5s;
+  z-index: 0;
+}
+.pedals {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pedal {
+  padding: 10px 0;
+  background: linear-gradient(180deg, #e0e0e0 0%, #b0b0b0 100%);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  &:active {
+    transform: translateY(2px);
+  }
+  transition: transform 0.2s linear;
+}
+.acceleratorPedal {
+  width: 40px;
+}
+.brakePedal {
+  width: 80px;
+}
+.updateIntervalInput {
+  width: 250px;
+  margin-top: 50px;
+}
+.updateIntervalText {
+  font-size: 1rem;
+  color: #fff;
+  margin-top: 20px;
+}
