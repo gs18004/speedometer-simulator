@@ -6,6 +6,7 @@ const App = () => {
   const [displaySpeed, setDisplaySpeed] = useState(0);
   const [needleSpeed, setNeedleSpeed] = useState(0);
   const [updateInterval, setUpdateInterval] = useState(300);
+  const [showNeedle, setShowNeedle] = useState(false);
   const lastFrameTime = useRef(0);
   const lastDisplaySpeedUpdateTime = useRef(Date.now());
   const updateIntervalRef = useRef(updateInterval);
@@ -80,18 +81,22 @@ const App = () => {
   ) => {
     setUpdateInterval(Number(e.target.value));
   };
-
+  const handleShowNeedle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setShowNeedle(e.target.checked);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.speedometer}>
-        <div
-          className={styles.needle}
-          style={{
-            transform: `translate(-50%, -100%) rotate(${
-              (needleSpeed * 300) / 260 - 180
-            }deg)`,
-          }}
-        />
+        {showNeedle ? (
+          <div
+            className={styles.needle}
+            style={{
+              transform: `translate(-50%, -100%) rotate(${
+                (needleSpeed * 300) / 260 - 180
+              }deg)`,
+            }}
+          />
+        ) : null}
         <div className={styles.speedText}>{`${Math.floor(
           displaySpeed
         )}km/h`}</div>
@@ -129,6 +134,14 @@ const App = () => {
       <p
         className={styles.updateIntervalText}
       >{`디지털 속도 업데이트 주기: ${updateInterval}ms`}</p>
+      <div className={styles.checkboxWrapper}>
+        <input
+          type="checkbox"
+          checked={showNeedle}
+          onChange={handleShowNeedle}
+        />
+        바늘 표시 (실험적 기능)
+      </div>
     </div>
   );
 };
