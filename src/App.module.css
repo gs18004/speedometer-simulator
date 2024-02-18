@@ -41,6 +41,7 @@
   transform-origin: 50% 100%;
   transition: transform 0.5s;
   z-index: 0;
+  will-change: transform;
 }
 .pedals {
   margin-top: 30px;

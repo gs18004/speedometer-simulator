@@ -44,7 +44,7 @@ const App = () => {
   };
 
   const updateNeedleSpeed = () => {
-    setNeedleSpeed(speed.current);
+    setNeedleSpeed(Math.floor(speed.current));
   };
 
   useEffect(() => {

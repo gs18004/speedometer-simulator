@@ -4,6 +4,10 @@
   box-sizing: border-box;
   font-family: Pretendard;
   line-height: 1;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 @font-face {
   font-family: "Pretendard";
